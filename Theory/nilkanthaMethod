@@ -1,0 +1,15 @@
+def calcPi(PI, n, sign):
+    for i in range(0,10000):
+        PI += sign * (4 / ((n) * (n + 1)* (n + 2)))
+
+        sign = sign * -1
+
+        n+=2
+
+    return PI
+
+PI = 3
+n = 2
+sign = 1
+
+print(calcPi(PI,n,sign))
