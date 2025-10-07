@@ -1,14 +1,10 @@
-﻿using System.Text;
+﻿using System.Security.Permissions;
+using System.Text;
 
 void PrintList(List<string> list)
 {
-    String str = "{";
-    foreach (var item in list)
-    {
-        str += $" {item},";
-    }
-    str += "}";
-    Console.WriteLine(str);
+    String str = String.Join(", ",list);
+    Console.WriteLine($"[{str}]");
 }
 
 List<string> Wave(string input)
@@ -44,7 +40,10 @@ void ToByteCode(string s)
     Console.WriteLine($"{s}: {String.Join(' ', byteArray)}");
 }
 
-
+String ToString(int[] charCodes)
+{
+    return charCodes == null ? null : string.Concat(Array.ConvertAll(charCodes, code => (char)code));
+}
 
 PrintList(Wave("hello"));
 ToCode("Hello");
@@ -52,3 +51,4 @@ ToCode("你好");
 ToByteCode("Hello");
 ToByteCode("你好");
 
+Console.WriteLine(ToString([72, 101, 108, 108, 111]));

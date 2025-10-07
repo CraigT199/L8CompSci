@@ -129,7 +129,7 @@ bool IsSubset(List<int> a, List<int> b)
     return true;
 }
 
-void Reverse(List<int> list)
+void Reverse(ref List<int> list)
 {
     int left = 0;
     int right = list.Count - 1;
@@ -160,26 +160,26 @@ void BubbleSort(List<int> list)
     }
 }
 
-// Debug.Assert(SumList(listOfIntegers)==listOfIntegers.Sum());
-// Debug.Assert(MaxValList(listOfIntegers)==listOfIntegers.Max());
-// Debug.Assert(MinValList(listOfIntegers)==listOfIntegers.Min());
+Debug.Assert(SumList(listOfIntegers)==listOfIntegers.Sum());
+Debug.Assert(MaxValList(listOfIntegers)==listOfIntegers.Max());
+Debug.Assert(MinValList(listOfIntegers)==listOfIntegers.Min());
 
-// List<int> correctNegList = new List<int> { -2, -4 };
-// Debug.Assert(NegativeValList(listOfIntegers).SequenceEqual(correctNegList));
+List<int> correctNegList = new List<int> { -2, -4 };
+Debug.Assert(NegativeValList(listOfIntegers).SequenceEqual(correctNegList));
 
-// List<int> secondListOfIntegers = new List<int> { 1, 5, -2, -4, 3, 2, 2, 7 };
-// List<int> correctSharedVals = new List<int> { 1, 5, -2, -4, 3, 2 };
-// Debug.Assert(!SameItems(listOfIntegers, secondListOfIntegers));
+List<int> secondListOfIntegers = new List<int> { 1, 5, -2, -4, 3, 2, 2, 7 };
+List<int> correctSharedVals = new List<int> { 1, 5, -2, -4, 3, 2 };
+Debug.Assert(!SameItems(listOfIntegers, secondListOfIntegers));
 
-// List<int> sortedList = new List<int> { 1, 2, 4, 6, 11, 20, 25 };
-// int lbound = 0;
-// int ubound = sortedList.Count()-1;
-// int target = 6;
-// Debug.Assert(BinarySearch(sortedList,target,lbound,ubound));
+List<int> sortedList = new List<int> { 1, 2, 4, 6, 11, 20, 25 };
+int lbound = 0;
+int ubound = sortedList.Count()-1;
+int target = 6;
+Debug.Assert(BinarySearch(sortedList,target,lbound,ubound));
 
-// List<int> listWithDuplicates = new List<int> { 1, 5, -2, -4, 3, 2, 1, -2, 7, 9, -2, -2 };
-// List<int> correctDups = new List<int> { 1, -2 };
-// Debug.Assert(GetDuplicates(listWithDuplicates).SequenceEqual(correctDups));
+List<int> listWithDuplicates = new List<int> { 1, 5, -2, -4, 3, 2, 1, -2, 7, 9, -2, -2 };
+List<int> correctDups = new List<int> { 1, -2 };
+Debug.Assert(GetDuplicates(listWithDuplicates).SequenceEqual(correctDups));
 
-// List<int> subsetOfIntegers = new List<int> { 1, 5, -2 };
-// Debug.Assert(IsSubset(listOfIntegers,subsetOfIntegers));
+List<int> subsetOfIntegers = new List<int> { 1, 5, -2 };
+Debug.Assert(IsSubset(listOfIntegers,subsetOfIntegers));
